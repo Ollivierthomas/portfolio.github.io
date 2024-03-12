@@ -1,3 +1,4 @@
+// navbar
 let menu = document.querySelector('#menu-icon');
 let navbar = document.querySelector('.navbar');
 
@@ -6,6 +7,26 @@ menu.onclick = () => {
     navbar.classList.toggle('open')
 };
 
+//skills
+const skillsContent = document.getElementsByClassName('skills-content');
+const skillsHeader = document.querySelectorAll('.skills-header')
+
+function toggleSkills(){
+    let itemClass = this.parentNode.className
+
+    for(i = 0; i < skillsContent.length; i++){
+        skillsContent[i].className = 'skills-content skills-close'
+    }
+    if(itemClass === 'skills-content skills-close'){
+        this.parentNode.className = 'skills-content skills-open'
+    }
+}
+
+skillsHeader.forEach((el) =>{
+    el.addEventListener('click', toggleSkills)
+})
+
+//animation de la page entière
 const sr = ScrollReveal ({
     distance: '40px',
     duration: 2500,
@@ -26,3 +47,8 @@ sr.reveal('.main-btn',{delay:860, origin: 'left'});
 sr.reveal('.share',{delay:950, origin: 'bottom'});
 
 sr.reveal('.home-img',{delay:1000, origin: 'right'});
+
+sr.reveal('.section-titles',{delay:1050, origin: 'top'});
+sr.reveal('.section-subtitle',{delay:1100, origin: 'top'})
+sr.reveal('.skills-header',{delay:1150, origin: 'left'})
+sr.reveal('.skills-data',{delay:1200, origin: 'right'})
