@@ -435,6 +435,11 @@ section {
         transition: .2s;
     }
 
+    .navbar a {
+        font-size: 20px;
+        font-weight: 600;
+    }
+
     .btn {
         padding: 9px 28px;
     }
